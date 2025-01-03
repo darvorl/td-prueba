@@ -1,3 +1,10 @@
+:root {
+    --clr--accent--100: rgb(255, 223, 255); 
+    --clr--accent--300: rgb(226, 109, 226); 
+    --clr--accent--100-night: rgb(34, 34, 34);
+    --clr--accent--300-night: rgb(95, 6, 95); 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +13,12 @@
 }
 
 main {
-    padding: 40px 100px;
+    padding: 40px 40px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     height: 100vh;
-    background-color: rgb(255, 223, 255);
+    background-color: var(--clr--accent--100);
 }
 
 .input {
@@ -20,10 +27,21 @@ main {
     align-items: center;
 }
 
+#themeBtn {
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--clr--accent--300);
+    background-color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 #searchBtn {
     font-size: 1rem;
     font-weight: 600;
-    color: rgb(216, 109, 226);
+    color: var(--clr--accent--300);
     background-color: white;
     padding: 4px 12px;
     border-radius: 4px;
@@ -33,7 +51,20 @@ main {
 
 .input input {
     padding: 2px 12px;
-    font-size: 1.5rem;
-    color: rgb(216, 109, 226);
-    width: 400px;
+    font-size: 1rem;
+    color: var(--clr--accent--300);
+}
+
+.dark-theme {
+    --clr--accent--100: var(--clr--accent--100-night);
+    --clr--accent--300: var(--clr--accent--300-night);
+    background-color: var(--clr--accent--100);
+    color: var(--clr--accent--300);
+}
+
+@media (max-width: 950px) {
+    .input {
+        flex-direction: column;
+        align-items: start;
+    }
 }
